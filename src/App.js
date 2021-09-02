@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
+import Profile from './Profile';
+import img from "./img.jpg"
+class App extends Component {
+    constructor() {
+        super();
+        this.state = {
+            fullName: "Thabet Hamdi",
+            profession: "Ingénieur électrique",
+            img,
+            toggle: true
+        }
+    };
+    toggle = () => {
+        this.setState({ toggle: !this.state.toggle })
+    };
+    render() {
+        return (
+            <>
+                { }
+                {this.state.toggle && 
+                    (<div className='composants'>
+                        <Profile src={this.state.img} fullName={this.state.fullName} profession={this.state.profession} />
+                    </div>
+                )}
+                <button className={`clickclick ${this.state.toggle ? 'success' : 'échec'}`} onClick={this.toggle}>{this.state.toggle ? 'Hide list' : 'Show list'}
+                </button>
+            </>
+        );
+    }
+};
 export default App;

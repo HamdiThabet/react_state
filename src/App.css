@@ -1,5 +1,21 @@
 .App {
   text-align: center;
+  background-color: coral;
+}
+.composants{
+  text-align: center;
+  background-color: coral;
+}
+.clickclick{
+  
+    display: block;
+      margin : auto;
+    
+  
+  padding-left: 50;
+  border:20px solid #81b5e8;
+  font-size:14px;
+  color:#1e62a5;
 }
 
 .App-logo {
